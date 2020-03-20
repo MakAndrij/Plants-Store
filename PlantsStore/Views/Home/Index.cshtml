@@ -1,0 +1,24 @@
+﻿@*@{
+    ViewBag.Title = "Succulents in Lviv";
+}*@
+   
+<div>
+    <h3>Продаж рослин</h3>
+    <table>
+        <tr>
+            <td><p>Назва рослини</p></td>
+            <td><p>Вид</p></td>
+            <td><p>Ціна</p></td>
+            <td></td>
+        </tr>
+        @foreach(var p in ViewBag.Plants)
+        {
+        <tr>
+            <td><p>@p.NameOfSort</p></td>
+            <td><p>@p.Variety</p></td>
+            <td><p>@p.Price</p></td>
+            <td><p><a href="/Home/Buy/@p.Id"> Купити </a></p></td>
+        </tr>
+        }
+    </table>
+</div>

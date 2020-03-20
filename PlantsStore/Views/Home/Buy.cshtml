@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Купівля рослини";
+}
+
+    <div>
+        <h3>Форма оформлення купівлі</h3>
+        <form method="post">
+            <input type="hidden" name="PlantId" value="@ViewBag.PlantId" />
+            <table>
+                <tr>
+                    <td><p>Введіть своє ім'я </p></td>
+                    <td><input type="text" name="Person"/></td>
+                </tr>
+                <tr>
+                    <td><p>Введіть свій адрес: </p></td>
+                    <td><input type="text" name="Address"/></td>
+                </tr>
+                <tr><td><input type="submit" value="Надіслати"/></td><td></td></tr>
+            </table>
+        </form>
+    </div>
+

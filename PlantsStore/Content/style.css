@@ -1,0 +1,151 @@
+/*GENERAL STYLES*/
+body {
+	font-family: Arial, San-Serif;
+	font-size: 100%; /*розмір тексту без змін*/
+}
+
+ul { /*щоб список не мав своїх стандартних відступів
+	margin:0;  
+	padding: 0;
+}
+/*і щоб всі елементи списку (Home,About...)
+не мали маркованих крапок :*/
+ul li {
+	list-style-type: none;
+}
+/*щоб всі гіперлінки немали нижнього підкреслення: */
+a {
+	text-decoration: none;
+}
+p {
+	font-size: 13px;
+	line-height: 1.3em;
+}
+.container {
+    margin: 0 auto; /*зовнішній відступ для розміщення по центр*/
+    width: 960px;
+    
+}
+/*HEADER*/
+.header {
+    padding: 50px 0; /*50 - зовн. відступ зверху та знизу; 0-по боках*/
+    background-color: yellowgreen;
+    border-radius: 15px;
+}
+.header h1,
+.header h2 {
+        color: greenyellow;
+        text-align: center; /* розміщення тексту по центрі блоку*/
+        border-radius: 5px;
+}
+
+.page-navigation {
+	background-color: #222;
+	border-color: #101010;
+	min-height: 64px;
+}
+.page-navigation li {
+	float:left;
+	width: 100px;
+}
+.page-navigation a {
+	display: block;
+	color: #9d9d9d;
+	line-height: 4em;
+	font-weight: bold;
+	text-align: center;
+}
+/*селектор :hover виділяє при наведенні курсором мишки*/
+.page-navigation li a:hover {
+	color: yellowgreen;
+	background-color: black;
+}
+.login {
+	padding: 15px 0;
+	float: right;
+}
+.login input[type="text"],
+.login input[type="password"] {
+	padding: 5px;
+	margin-right: 5px;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	outline: none; /*забирає голубу рамку з форм*/
+}
+.login input[type="submit"] {
+	padding: 5px 15px;
+	border: 1px solid lightgrey;
+	border-radius: 5px;
+}
+.login input[type="submit"]:hover,
+ button:hover {
+	background-color: darkgrey;
+	color: white;
+}
+
+/*MAIN PART*/
+.collections {
+	overflow: auto;
+}
+.collection-title {
+	padding-bottom: 5px;
+	border-bottom: 1px solid #777;
+	font-size: 36px;
+}
+.collection-title small {
+	color: #777;
+	font-size: 70%;
+}
+.collection-item-outer
+{
+	display: inline-block;
+	float: left;
+	padding-left: 5px;
+	padding-right: 5px;
+	width: 33.33%;
+	box-sizing: border-box;
+}
+.collections > div:first-child {
+	padding-left: 0;
+	padding-right: 5px
+}
+.collections > div:last-child {
+	padding-left: 5px;
+	padding-right: 0;
+}
+
+.collection-item {
+	border: 1px solid #959595;
+}
+.collection-item img,
+.collection-item video {
+	width: 100%
+}
+.collection-text {
+	padding:0 20px 20px 20px;
+}
+.collection-text h3 {
+	color: limegreen;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+
+}
+.collection-text p {
+	height: 90px;  /*максимальна висота тексту в контейнері*/
+	overflow: hidden; /*весь текст, який виходить поза 80 пікс - заховати*/
+}
+.collection-text button {
+	padding: 10px;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	outline: none;
+}
+
+/*FOOTER*/
+.footer {
+	
+	color: white;
+	padding:  20px 0;
+	margin-top: 30px;
+}
