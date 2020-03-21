@@ -1,6 +1,7 @@
-﻿@*@{
+﻿@model IEnumerable<PlantsStore.Models.Plant>
+@{
     ViewBag.Title = "Succulents in Lviv";
-}*@
+}
    
 <div>
     <h3>Продаж рослин</h3>
@@ -11,7 +12,7 @@
             <td><p>Ціна</p></td>
             <td></td>
         </tr>
-        @foreach(var p in ViewBag.Plants)
+        @foreach(var p in Model)
         {
         <tr>
             <td><p>@p.NameOfSort</p></td>
