@@ -20,7 +20,8 @@ namespace PlantsStore.Controllers
         public ActionResult Buy(int id)
         {
             ViewBag.PlantId = id;
-            return View();
+            Purchase purchase = new Purchase { PlantId = id,  Person = "Невідомо"};
+            return View(purchase);
         }
         [HttpPost]
         public string Buy(Purchase purchase)
