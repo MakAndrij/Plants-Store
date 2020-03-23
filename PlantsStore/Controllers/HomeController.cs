@@ -13,8 +13,8 @@ namespace PlantsStore.Controllers
         public ActionResult Index()
         {
             var plants = db.Plants;
-            ViewBag.Plants = plants;
-            return View();
+           // ViewBag.Plants = plants;
+            return View(plants);
         }
         [HttpGet]
         public ActionResult Buy(int id)
