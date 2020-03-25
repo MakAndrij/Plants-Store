@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -75,6 +76,28 @@ namespace PlantsStore.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+            if(id == null)
+            {
+                return HttpNotFound();
+            }
+            Plant plant = db.Plants.Find(id);
+            if (plant != null)
+            {
+                return View(plant);
+            }
+            return HttpNotFound();
+        }
+        [HttpPost]
+        public ActionResult Edit(Plant plant)
+        {
+            db.Entry(plant).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
