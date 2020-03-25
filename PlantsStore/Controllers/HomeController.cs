@@ -17,6 +17,28 @@ namespace PlantsStore.Controllers
             return View(plants);
         }
         [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(Plant plant)
+        {
+            db.Plants.Add(plant);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult GetPlant(int id)
+        {
+            Plant p = db.Plants.Find(id);
+            if (p == null)
+                return HttpNotFound();
+            return View(p);
+        }
+
+        [HttpGet]
         public ActionResult Buy(int id)
         {
             ViewBag.PlantId = id;
@@ -31,7 +53,28 @@ namespace PlantsStore.Controllers
             db.SaveChanges();
             return "Дякую," + purchase.Person + ", за купівлю! ";
         }
-
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            Plant p = db.Plants.Find(id);
+            if(p == null)
+            {
+                return HttpNotFound();
+            }
+            return View(p);
+        }
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Plant p = db.Plants.Find(id);
+            if (p == null)
+            {
+                return HttpNotFound();
+            }
+            db.Plants.Remove(p);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
