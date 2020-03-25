@@ -1,0 +1,23 @@
+﻿@model PlantsStore.Models.Plant
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Нова рослина</h2>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.NameOfSort, "Назва рослини")
+    <br />
+    @Html.EditorFor(model => model.NameOfSort)
+    <br /><br />
+    @Html.LabelFor(model => model.Variety, "Cорт рослини")
+    <br />
+    @Html.EditorFor(model => model.Variety)
+    <br /><br />
+    @Html.LabelFor(model => model.Price, "Ціна рослини")
+    <br />
+    @Html.EditorFor(model => model.Price)
+    <br /><br />
+    <input type="submit" value="Додати" />
+}

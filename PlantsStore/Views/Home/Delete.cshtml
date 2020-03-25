@@ -1,0 +1,29 @@
+﻿@model PlantsStore.Models.Plant
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Видалення рослини</h2>
+<dl>
+    <dt>Назва</dt>
+    <dd>
+        @Html.DisplayFor(model => model.NameOfSort)
+    </dd>
+
+    <dt>Вид</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Variety)
+    </dd>
+
+    <dt>Ціна</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Price)
+    </dd>
+</dl>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value=" Видалити" />
+}
+
